@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Tasks from "./Tasks";
+import NewTaskForm from "./NewTaskForm";
 import todos from "../data"
 import generateId from "../generateId";
-
 
 
 const Home = () => {
@@ -29,23 +29,23 @@ const Home = () => {
 
 	// Remove Task
 	function handleRemove(id) {
-		return setTasks((prevTask) => prevTask.filter(x => x.id !== id));
+		return setTasks(tasks.filter(task => task.id !== id));
 	}
-
 
 	return (
 		<>
 			<h1>TODOS</h1>
-			<form>
-				<input
-					type="text" onChange={(e) => setNewTask(e.target.value)}
-					onKeyDown={(e) => { if (e.key === 'Enter') handleClickAddNewTask() }}
-					value={newTask}
-					placeholder="new task"
+			<NewTaskForm
+				addNewTask={handleClickAddNewTask}
+				newTask={newTask}
+				setNewTask={setNewTask}
+			/>
+			<ul>
+				<Tasks
+					tasks={tasks}
+					removeTask={handleRemove}
 				/>
-				<button onClick={handleClickAddNewTask}>Add</button>
-			</form>
-			<Tasks tasks={tasks} removeTask={handleRemove} />
+			</ul>
 		</>
 
 	);

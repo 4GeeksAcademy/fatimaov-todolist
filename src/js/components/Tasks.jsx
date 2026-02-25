@@ -2,13 +2,9 @@ import React from "react";
 
 function Tasks({ tasks, removeTask }) {
 
-
-
     return (
         <>
-            <ul>
-                {tasks
-                    .map((task) => {
+                {tasks.map((task) => {
                         return <li key={task.id}>
                             {task.task}
                             <button
@@ -21,7 +17,6 @@ function Tasks({ tasks, removeTask }) {
                     )
                     .reverse()
                 }
-            </ul>
         </>
     )
 }
