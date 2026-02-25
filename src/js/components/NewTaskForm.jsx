@@ -5,7 +5,8 @@ function NewTaskForm({ addNewTask, newTask, setNewTask }) {
         <>
             <form onSubmit={(e) => e.preventDefault()}>
                 <input
-                    type="text" onChange={(e) => setNewTask(e.target.value)}
+                    type="text"
+                    onChange={(e) => setNewTask(e.target.value)}
                     value={newTask}
                     placeholder="new task"
                 />

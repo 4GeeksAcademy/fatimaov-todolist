@@ -1,8 +1,8 @@
-let newId = 0
+let nextId = 0
 function generateId() {
-	const result = newId;
-	newId++
-	return result;
+	const id = nextId;
+	nextId++
+	return id;
 }
 
 export default generateId;

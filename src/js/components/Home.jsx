@@ -4,12 +4,9 @@ import NewTaskForm from "./NewTaskForm";
 import todos from "../data"
 import generateId from "../generateId";
 
-
 const Home = () => {
 	const [tasks, setTasks] = useState(() => todos);
-	console.log(tasks)
 	const [newTask, setNewTask] = useState('');
-	console.log(newTask)
 
 	// Add new task
 	function handleClickAddNewTask() {
